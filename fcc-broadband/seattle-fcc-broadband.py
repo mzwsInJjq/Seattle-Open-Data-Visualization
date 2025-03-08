@@ -42,9 +42,10 @@ data2 = pd.read_csv(r'C:\Users\Chen\Downloads\bdc_53_Cable_fixed_broadband_J24_0
 data = pd.concat([data1, data2])
 census_tracts = gpd.read_file(r"C:\Users\Chen\Downloads\2020_Census_Tracts_Seattle_600198261190227915.geojson")
 
-# print(f"data.columns: {data.columns}")
-# print(f"census_tracts.columns: {census_tracts.columns}")
+print(f"data.columns: {data.columns}")
+print(f"census_tracts.columns: {census_tracts.columns}")
 census_tracts_list = census_tracts['GEOID20'].unique().tolist()
+
 # Truncate the 'block_geoid' column to only keep the first 11 characters
 data['block_geoid'] = data['block_geoid'].astype(str).str[:11]
 # Filter data to only keep rows where 'block_geoid' starts with any elements in the census_tracts_list
