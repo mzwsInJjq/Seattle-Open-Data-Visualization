@@ -1,6 +1,6 @@
 # Seattle Open Data Visualization
 
-This repository contains scripts to visualize Seattle's street network data along with neighborhood boundaries using GeoJSON files.
+This repository contains scripts to visualize Seattle's street network data along with neighborhood boundaries using GeoJSON and CSV files.
 
 ## Dataset Sources
 
