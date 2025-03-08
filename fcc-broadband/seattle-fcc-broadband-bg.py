@@ -67,7 +67,7 @@ census_block_groups['color'] = census_block_groups['max_download_speed_in_tract'
     lambda x: 'gray' if pd.isnull(x) else plt.cm.Blues(LogNorm(vmin=1200, vmax=400000)(x))
 )
 
-census_block_groups.plot(ax=ax, color=census_block_groups['color'], label='Census Block Groups', linewidth=0.5, edgecolor='k')
+census_block_groups.plot(ax=ax, color=census_block_groups['color'], label='Census Block Groups', linewidth=0.4, edgecolor='k')
 
 plt.savefig('seattle-fcc-broadband-bg.pdf', format='pdf', bbox_inches='tight')
 plt.show()
