@@ -91,33 +91,6 @@ data.columns: Index(['frn', 'provider_id', 'brand_name', 'location_id', 'technol
        'low_latency', 'business_residential_code', 'state_usps', 'block_geoid',
        'h3_res8_id'],
       dtype='object')
-census_tracts.columns: Index(['OBJECTID', 'CTLabel', 'BoroCode', 'BoroName', 'CT2020', 'BoroCT2020',
-       'CDEligibil', 'NTAName', 'NTA2020', 'CDTA2020', 'CDTANAME', 'GEOID',
-       'PUMA', 'Shape__Area', 'Shape__Length', 'geometry'],
-      dtype='object')
-            GEOID max_download_speed_in_tract
-0     36061000100                         NaN
-1     36061001401                         940
-2     36061001402                         940
-3     36061001800                         940
-4     36061002201                         940
-...           ...                         ...
-2320  36047008600                         940
-2321  36047009201                         940
-2322  36047042300                         940
-2323  36047039100                         940
-2324  36047039300                         940
-
-[2325 rows x 2 columns]
-[nan '940' '100000' '2300' '1000' '30' '10000']
-PS C:\Users\Chen\Documents\VSCode\Python\nyc-opendata> cd ..
-PS C:\Users\Chen\Documents\VSCode\Python> cd .\seattle-opendata\
-PS C:\Users\Chen\Documents\VSCode\Python\seattle-opendata> & C:/Users/Chen/AppData/Local/Microsoft/WindowsApps/python3.12.exe c:/Users/Chen/Documents/VSCode/Python/seattle-opendata/seattle-fcc-broadband.py
-data.columns: Index(['frn', 'provider_id', 'brand_name', 'location_id', 'technology',
-       'max_advertised_download_speed', 'max_advertised_upload_speed',
-       'low_latency', 'business_residential_code', 'state_usps', 'block_geoid',
-       'h3_res8_id'],
-      dtype='object')
 census_tracts.columns: Index(['OBJECTID', 'GEOID20', 'GROSS_ACRES', 'LAND_ACRES', 'WATER_ACRES',
        'NAME', 'TRACT_NUMB', 'BASENAME', 'UVDA_AREA', 'CRA_NO', 'CRA_GRP',
        'GEN_ALIAS', 'DETL_NAMES', 'C_DISTRICT', 'geometry'],
