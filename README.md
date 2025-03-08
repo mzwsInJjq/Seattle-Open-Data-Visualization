@@ -70,7 +70,8 @@ python seattle-snd-bo.py
     - [Seattle_City_Limits_-2760504394019241448.geojson](https://data-seattlecitygis.opendata.arcgis.com/maps/seattle-city-limits-2)
     - [bdc_53_FibertothePremises_fixed_broadband_J24_04mar2025.csv](https://broadbandmap.fcc.gov/data-download)
     - [bdc_53_Cable_fixed_broadband_J24_04mar2025.csv](https://broadbandmap.fcc.gov/data-download)
-    - [2020_Census_Tracts_Seattle_600198261190227915.geojson](https://data-seattlecitygis.opendata.arcgis.com/datasets/SeattleCityGIS::2020-census-tracts-seattle/)
+    - [2020_Census_Tracts_Seattle_600198261190227915.geojson](https://data-seattlecitygis.opendata.arcgis.com/datasets/SeattleCityGIS::2020-census-tracts-seattle)
+    - [2020_Census_Block_Groups_-_Seattle.geojson](https://data-seattlecitygis.opendata.arcgis.com/datasets/SeattleCityGIS::2020-census-block-groups-seattle-1)
 
 2. Update the file paths in the script to point to the downloaded GeoJSON and CSV files.
 
@@ -83,8 +84,9 @@ python seattle-fcc-broadband.py
 
 - `seattle-snd.py` will generate a `seattle-snd.pdf` file with the visualization of Seattle's street network and neighborhood boundaries.
 - `seattle-snd-bo.py` will generate a `seattle-snd-bo.pdf` file with the visualization of Seattle's street network, neighborhood boundaries, and building outlines.
-- `seattle-fcc-broadband.py` will generate a `seattle-fcc-broadband.pdf` file with the visualization of Seattle's broadband data.
-
+- `seattle-fcc-broadband.py` will generate a `seattle-fcc-broadband.pdf` file with the visualization of Seattle's broadband data. (Census Tracts-Level)
+- `seattle-fcc-broadband-bg.py` will generate a `seattle-fcc-broadband-bg.pdf` file with the visualization of Seattle's broadband data. (Census Block Groups-Level)
+### Output of `seattle-fcc-broadband.py`
 ```
 data.columns: Index(['frn', 'provider_id', 'brand_name', 'location_id', 'technology',
        'max_advertised_download_speed', 'max_advertised_upload_speed',
@@ -110,4 +112,33 @@ census_tracts.columns: Index(['OBJECTID', 'GEOID20', 'GROSS_ACRES', 'LAND_ACRES'
 
 [177 rows x 2 columns]
 [  2000   8000   1200  10000 100000   6000 400000]
+```
+
+### Output of `seattle-fcc-broadband-bg.py`
+```
+data.columns: Index(['frn', 'provider_id', 'brand_name', 'location_id', 'technology',
+       'max_advertised_download_speed', 'max_advertised_upload_speed',
+       'low_latency', 'business_residential_code', 'state_usps', 'block_geoid',
+       'h3_res8_id'],
+      dtype='object')
+census_block_groups.columns: Index(['OBJECTID', 'GEOID20', 'GROSS_ACRES', 'ACRES_LAND', 'ACRES_WATER',
+       'TRBG', 'NAMELSAD', 'BG', 'TRACT', 'TRACT_LABEL', 'Shape__Area',
+       'Shape__Length', 'geometry'],
+      dtype='object')
+          GEOID20  max_download_speed_in_tract
+0    530330002021                       2000.0
+1    530330002022                       2000.0
+2    530330004022                       2000.0
+3    530330013003                       2000.0
+4    530330017013                       2000.0
+..            ...                          ...
+531  530330074042                       2000.0
+532  530330080033                       2000.0
+533  530330091001                       8000.0
+534  530330092002                       8000.0
+535  530330104013                       2000.0
+
+[536 rows x 2 columns]
+[  2000.   8000.     nan  10000.   6000.   5000. 100000.   1200.   1500.
+ 400000.]
 ```
