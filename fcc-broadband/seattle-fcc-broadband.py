@@ -64,7 +64,7 @@ print(census_tracts['max_download_speed_in_tract'].unique())
 
 # Color the census tracts based on the max download speed in each tract
 census_tracts['color'] = census_tracts['max_download_speed_in_tract'].apply(
-    lambda x: 'gray' if pd.isnull(x) else plt.cm.Blues(LogNorm(vmin=940, vmax=400000)(x))
+    lambda x: 'gray' if pd.isnull(x) else plt.cm.Blues(LogNorm(vmin=1200, vmax=400000)(x))
 )
 
 census_tracts.plot(ax=ax, color=census_tracts['color'], label='Census Tracts', linewidth=0.5, edgecolor='k')
