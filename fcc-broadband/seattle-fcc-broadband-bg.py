@@ -37,8 +37,8 @@ nman.plot(ax=ax, color='gray', label='NMAN', alpha=0.5)
 snd.plot(ax=ax, color='black', label='SND', linewidth=0.4, alpha=0.25)
 scl.plot(ax=ax, color='red', label='SCL', linewidth=0.6, edgecolor='k')
 
-data1 = pd.read_csv(r'C:\Users\Chen\Downloads\bdc_53_FibertothePremises_fixed_broadband_J24_04mar2025.csv')
-data2 = pd.read_csv(r'C:\Users\Chen\Downloads\bdc_53_Cable_fixed_broadband_J24_04mar2025.csv')
+data1 = pd.read_csv(r'D:\Misc\bdc_53_FibertothePremises_fixed_broadband_D24_19jun2025.csv')
+data2 = pd.read_csv(r'D:\Misc\bdc_53_Cable_fixed_broadband_D24_19jun2025.csv')
 data = pd.concat([data1, data2])
 census_block_groups = gpd.read_file(r"C:\Users\Chen\Downloads\2020_Census_Block_Groups_-_Seattle.geojson")
 
